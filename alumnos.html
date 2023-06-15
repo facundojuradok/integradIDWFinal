@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inscripcion de Estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container">
+          <!-- Izquierda -->
+          <a class="navbar-brand" href="bedelia.html">
+            <img class="navbar-brand-logo" src="./img/logo-uner.png" alt="Logo Bedelía, UNER" style="width: 178px; height: auto;" />
+          </a>
+
+          <!-- Botón para dispositivos móviles -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Derecha -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="alumnos.html">Administrar alumnos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="materias-bedelia.html">Administrar carreras</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="inscribir-alumnos.html">Inscribir a materias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="mensajes.html">Leer mensajes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="filtrar-estudiantes.html">Ver Inscriptos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="noticias.html">Noticias (API)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Seccion con form y tabla alumnos -->
+    <section class="alumnos_bedelia container" id="estudiantes">
+      <div class="container" id="body">
+        <br />
+        <h2>Completa el formulario para agregar nuevos alumnos</h2>
+        <br />
+        <div class="form_alumnos">
+          <form id="estudiantesForm">
+            <div class="form-group">
+              <label for="inputNombre">Nombre</label>
+              <input type="text" id="inputNombre" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="inputApellido">Apellido</label>
+              <input type="text" id="inputApellido" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="inputDni">DNI</label>
+              <input type="number" id="inputDni" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="inputFecheNacimiento">Fecha de nacimiento</label>
+              <input type="date" id="inputFecheNacimiento" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="selectNacionalidad">Nacionalidad</label>
+              <select id="selectNacionalidad" class="form-control">
+                <option value="">Seleccionar nacionalidad</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Cuba">Cuba</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Guatemala">Guatemala</option>
+                <option value="Honduras">Honduras</option>
+                <option value="México">México</option>
+                <option value="Nicaragua">Nicaragua</option>
+                <option value="Panamá">Panamá</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Perú">Perú</option>
+                <option value="República Dominicana">República Dominicana</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="inputMail">Email</label>
+              <input type="email" id="inputMail" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="inputCelular">Celular</label>
+              <input type="number" id="inputCelular" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSubir">
+              Cargar alumno
+            </button>
+          </form>
+        </div>
+        <div class="input-group mt-4">
+          <input type="text" class="form-control" placeholder="Buscar alumnos" id="buscarInput" aria-label="Buscar alumnos" aria-describedby="btnBuscar" />
+        </div>
+      </div>
+      <!-- Tabla donde se imprimen alumnos -->
+      <div class="tabla_estudiantes mt-4">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>DNI</th>
+              <th>Fecha de nacimiento</th>
+              <th>Nacionalidad</th>
+              <th>Email</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEstudiantes">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-light mt-4 pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Trabajo práctico integrador - Introducción al desarrollo web</p>
+          </div>
+          <div class="col-md-6">
+            <p>Integrantes: Facundo Jurado | Gonzalo Jurado | Maximiliano Jurado</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/estudiantes.js"></script>
+  </body>
+</html>

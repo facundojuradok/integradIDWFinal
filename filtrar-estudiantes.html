@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filtrar Estudiantes por Materia</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container">
+                <!-- Izquierda -->
+                <a class="navbar-brand" href="bedelia.html">
+                    <img class="navbar-brand-logo" src="./img/logo-uner.png" alt="Logo Bedelía, UNER"
+                        style="width: 178px; height: auto;">
+                </a>
+
+                <!-- Botón para dispositivos móviles -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Derecha -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="alumnos.html">Administrar alumnos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="materias-bedelia.html">Administrar carreras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscribir-alumnos.html">Inscribir a materias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mensajes.html">Leer mensajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="filtrar-estudiantes.html">Ver Inscriptos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="noticias.html">Noticias (API)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container mt-5">
+            <h3>Filtrar Estudiantes por Materia</h3>
+                <div class="form-group">
+                    <label for="carreraSelect">Selecciona una Carrera:</label>
+                    <select class="form-control" id="carreraSelect" onchange="cargarMaterias()">
+                        <option value="">-- Selecciona una carrera --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="materiaSelect">Selecciona una Materia:</label>
+                    <select class="form-control" id="materiaSelect">
+                        <option value="">-- Selecciona una materia --</option>
+                    </select>
+                </div>
+            <button type="button" class="btn btn-primary" onclick="filtrarEstudiantes()">Filtrar Estudiantes</button>
+            <hr>
+            <h5>Estudiantes Inscritos:</h5>
+            <p id="totalEstudiantes"></p>
+            <ul id="resultadoEstudiantes"></ul>
+        </div>
+    </section>
+    <footer class="bg-dark text-light mt-4 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Trabajo práctico integrador - Introducción al desarrollo web</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Integrantes: Facundo Jurado | Gonzalo Jurado | Maximiliano Jurado</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/filtrado-estudiantes.js"></script>
+</body>
+</html>

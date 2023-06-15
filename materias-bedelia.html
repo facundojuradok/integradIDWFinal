@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registro de Materias y Carreras</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <div class="container">
+              <!-- Izquierda -->
+              <a class="navbar-brand" href="bedelia.html">
+                  <img class="navbar-brand-logo" src="./img/logo-uner.png" alt="Logo Bedelía, UNER"
+                      style="width: 178px; height: auto;">
+              </a>
+
+              <!-- Botón para dispositivos móviles -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <!-- Derecha -->
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="alumnos.html">Administrar alumnos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="materias-bedelia.html">Administrar carreras</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="inscribir-alumnos.html">Inscribir a materias</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="mensajes.html">Leer mensajes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="filtrar-estudiantes.html">Ver Inscriptos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="noticias.html">Noticias (API)</a>
+                  </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+    
+
+    <div class="container">
+      <h1>Registro de Carreras y Materias</h1>
+
+      <div class="mt-4">
+        <h2>Formulario de Carreras</h2>
+        <form id="carreraForm">
+          <div class="form-group">
+            <label for="carrera">Nombre de la Carrera:</label>
+            <input type="text" class="form-control" id="carrera" required />
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" required />
+          </div>
+          <div class="form-group">
+            <label for="duracion">Duración:</label>
+            <input type="text" class="form-control" id="duracion" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar Carrera</button>
+        </form>
+      </div>
+
+<!-- Modal para editar carrera -->
+<div class="modal fade" id="editarCarreraModal" tabindex="-1" role="dialog" aria-labelledby="editarCarreraModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarCarreraModalLabel">Editar Carrera</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="editarCarreraNombre">Nombre de la Carrera</label>
+            <input type="text" class="form-control" id="editarCarreraNombre">
+          </div>
+          <div class="form-group">
+            <label for="editarCarreraDescripcion">Descripción</label>
+            <textarea class="form-control" id="editarCarreraDescripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="editarCarreraDuracion">Duración</label>
+            <input type="text" class="form-control" id="editarCarreraDuracion">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="editarCarreraGuardar">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form para cargar al local -->
+      <div class="mt-4">
+        <h2>Formulario de Materias</h2>
+        <form id="materiaForm">
+          <div class="form-group">
+            <label for="nombreMateria">Nombre de la Materia:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombreMateria"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="carreraPerteneciente">Carrera:</label>
+            <select
+              class="form-control"
+              id="carreraPerteneciente"
+              required
+            ></select>
+          </div>
+          <div class="form-group">
+            <label for="cargaHoraria">Carga Horaria:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cargaHoraria"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="profesorTitular">Profesor Titular:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="profesorTitular"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="profesorPractica">Profesor de Práctica:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="profesorPractica"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="regimen">Régimen:</label>
+            <input type="text" class="form-control" id="regimen" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar Materia</button>
+        </form>
+      </div>
+
+      <!-- Modal para editar materia -->
+<div class="modal fade" id="editarMateriaModal" tabindex="-1" role="dialog" aria-labelledby="editarMateriaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editarMateriaModalLabel">Editar Materia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="editarMateriaNombre">Nombre de la Materia</label>
+            <input type="text" class="form-control" id="editarMateriaNombre">
+          </div>
+          <div class="form-group">
+            <label for="editarMateriaCarrera">Carrera</label>
+            <select class="form-control" id="editarMateriaCarrera">
+              
+              <!-- Opciones de carrera -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editarMateriaCargaHoraria">Carga Horaria</label>
+            <input type="text" class="form-control" id="editarMateriaCargaHoraria">
+          </div>
+          <div class="form-group">
+            <label for="editarMateriaProfesorTitular">Profesor Titular</label>
+            <input type="text" class="form-control" id="editarMateriaProfesorTitular">
+          </div>
+          <div class="form-group">
+            <label for="editarMateriaProfesorPractica">Profesor de Práctica</label>
+            <input type="text" class="form-control" id="editarMateriaProfesorPractica">
+          </div>
+          <div class="form-group">
+            <label for="editarMateriaRegimen">Régimen</label>
+            <input type="text" class="form-control" id="editarMateriaRegimen">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="editarMateriaGuardar">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="mt-4">
+        <h2>Carreras Registradas</h2>
+        <div id="carreras"></div>
+      </div>
+    </div>
+
+
+    <footer class="bg-dark text-light mt-4 pt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Trabajo práctico integrador - Introducción al desarrollo web</p>
+          </div>
+          <div class="col-md-6">
+            <p>Integrantes: Facundo Jurado | Gonzalo Jurado | Maximiliano Jurado</p>
+          </div>
+        </div>
+      </div>
+    </footer>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/materias.js"></script>
+
+
+  </body>
+</html>

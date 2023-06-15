@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscripción de Alumnos a Materias</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    
+      <style>
+      .botonMatricular {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <div class="container">
+              <!-- Izquierda -->
+              <a class="navbar-brand" href="bedelia.html">
+                  <img class="navbar-brand-logo" src="./img/logo-uner.png" alt="Logo Bedelía, UNER"
+                      style="width: 178px; height: auto;">
+              </a>
+
+              <!-- Botón para dispositivos móviles -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <!-- Derecha -->
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="alumnos.html">Administrar alumnos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="materias-bedelia.html">Administrar carreras</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="inscribir-alumnos.html">Inscribir a materias</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="mensajes.html">Leer mensajes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="filtrar-estudiantes.html">Ver Inscriptos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="noticias.html">Noticias (API)</a>
+                  </li>
+              </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Inscripción de Alumnos a Materias</h1>
+          <div class="form-group">
+            <input
+              type="text"
+              id="buscador"
+              class="form-control"
+              placeholder="Buscar estudiante"
+            />
+          </div>
+          <ul id="resultadoBusqueda" class="list-unstyled"></ul>
+
+          <div id="divCarreras" style="display: none">
+            <label for="selectCarreras">Seleccionar Carrera:</label>
+            <select id="selectCarreras" class="form-control"></select>
+          </div>
+
+          <div id="materiasCarrera" style="display: none"></div>
+
+          <button id="inscribirBtn" class="btn btn-primary mt-3">
+            Inscribir Estudiantes
+          </button>
+
+          <div
+            id="errorEstudiantes"
+            class="mt-3"
+            style="display: none; color: red"
+          >
+            Por favor, seleccione un estudiante para continuar.
+          </div>
+          <div
+            id="errorMaterias"
+            class="mt-3"
+            style="display: none; color: red"
+          >
+            Por favor, seleccione una materia para continuar.
+          </div>
+
+          <div id="inscripcionInfo" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-light mt-4 pt-4">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <p>Trabajo práctico integrador - Introducción al desarrollo web</p>
+              </div>
+              <div class="col-md-6">
+                  <p>Integrantes: Facundo Jurado | Gonzalo Jurado | Maximiliano Jurado</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/inscribir-alumnosMaterias.js"></script>
+  </body>
+</html>
